@@ -1,0 +1,13 @@
+{
+    "devall_customform": {
+        "column": {
+            "id": true,
+            "name": true,
+            "datepicker": true,
+            "created_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}
