@@ -60,6 +60,5 @@ module.exports = {
             'css/styles'
         ],
         dsl: 'less'
-    },
-
+    }
 };

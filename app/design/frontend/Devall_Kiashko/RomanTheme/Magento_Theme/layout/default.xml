@@ -8,9 +8,10 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceBlock name="form.subscribe" remove="true"/>
         <move element="navigation.sections" destination="header-wrapper"/>
         <move element="some.container" destination="header-wrapper"/>
+        <move element="some.container2" destination="footer-container" before="-"/>
+        <move element="form.subscribe" destination="some.container2"/>
         <move element="minicart" destination="header.panel" before="-"/>
         <referenceBlock name="header.panel">
             <block class="Magento\Framework\View\Element\Html\Link" name="custom-header-link">
@@ -20,15 +21,24 @@
                 </arguments>
             </block>
         </referenceBlock>
-        <!--My custom container -->
+        <!--My custom container 1-->
         <container name="some.container" htmlClass="some-container" as="someContainer"
                    htmlTag="div"
                    label="Some Container">
             <block class="Magento\Framework\View\Element\Template" before="-" name="myview"
                    template="Magento_Theme::myview.phtml"/>
         </container>
-        <!--My custom container -->
+        <!--My custom container 1-->
+
         <referenceContainer name="footer" label="Page Footer" htmlTag="div" htmlClass="footer content">
+            <container name="some.container2" htmlClass="some-container2" as="someContainer2"
+                       htmlTag="div"
+                       label="Some Container">
+                <block class="Magento\Framework\View\Element\Template" before="-" name="myview2"
+                       template="Magento_Theme::myview2.phtml"/>
+            </container>
+            <container name="custom.container" as="customContainer" label="Custom Container" htmlTag="div"
+                       before="footer.container" htmlClass="row"/>
             <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-2">
                 <arguments>
                     <argument name="css_class" xsi:type="string">footer links</argument>

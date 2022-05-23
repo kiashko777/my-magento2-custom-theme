@@ -8,7 +8,7 @@
 }
 
 .page-footer {
-    background-color: forestgreen;
+    background-color: #2c2c2f;
 }
 
 .navigation {
@@ -78,6 +78,17 @@
     }
 }
 
+.some-container2 {
+    background-color: #7bae23;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    min-height: 40px;
+    padding: 10px;
+    max-width: 100%;
+}
+
 .wrap {
     display: flex;
 
@@ -93,5 +104,103 @@
     margin-left: 10px;
     justify-content: center;
 }
+
+.navigation .level0.active > .level-top, .navigation .level0.has-active > .level-top {
+    border-color: #7bae23;
+    border-style: solid;
+    border-width: 0 0 3px;
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.action.primary {
+    background: #7bae23 none;
+    border: 1px solid #7bae23;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    padding: 7px 15px;
+    font-size: 1.4rem;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.minicart-wrapper .action.showcart .counter.qty {
+    background: #7bae23;
+    color: #fff;
+    height: 24px;
+    line-height: 24px;
+    border-radius: 2px;
+    display: inline-block;
+    margin: 3px 0 0;
+    min-width: 18px;
+    overflow: hidden;
+    padding: 0 3px;
+    text-align: center;
+    white-space: normal;
+}
+
+.page-footer .action.primary {
+    background: #669c07 none;
+    border: 1px solid #669c07;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    padding: 7px 15px;
+    border-radius: 20px;
+    font-size: 1.8rem;
+    box-sizing: border-box;
+    vertical-align: middle;
+}
+
+.block.newsletter {
+    max-width: 44%;
+    width: max-content;
+    border-radius: 5px;
+    margin-top: 30px;
+}
+
+.block.newsletter .form.subscribe {
+    display: table;
+    width: 100%;
+    border-radius: 5px;
+}
+
+input[type="text"], input[type="password"], input[type="url"], input[type="tel"], input[type="search"], input[type="number"], input[type*="date"], input[type="email"] {
+    background: #fff;
+    background-clip: padding-box;
+    border: 1px solid #c2c2c2;
+    border-radius: 8px;
+    font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    height: 32px;
+    line-height: 1.428571429;
+    padding: 0 9px;
+    vertical-align: baseline;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.subr {
+    display: flex;
+}
+
+.subr2 {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    justify-content: center;
+
+    h3 {
+        font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: 700;
+    }
+}
+
 
 
