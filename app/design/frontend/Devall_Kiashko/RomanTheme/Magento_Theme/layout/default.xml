@@ -21,6 +21,33 @@
                 </arguments>
             </block>
         </referenceBlock>
+        <referenceBlock name="footer_links">
+            <block class="Magento\Framework\View\Element\Text" name="footer_links_title" before="-">
+                <arguments>
+                    <argument translate="true" name="text" xsi:type="string">
+                        <![CDATA[<h4>My Account</h4>]]>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="footer_links-2">
+            <block class="Magento\Framework\View\Element\Text" name="footer_links-2_title" before="-">
+                <arguments>
+                    <argument translate="true" name="text" xsi:type="string">
+                        <![CDATA[<h4>Customers Services</h4>]]>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="footer_links-3">
+            <block class="Magento\Framework\View\Element\Text" name="footer_links-3_title" before="-">
+                <arguments>
+                    <argument translate="true" name="text" xsi:type="string">
+                        <![CDATA[<h4>Information</h4>]]>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
         <!--My custom container 1-->
         <container name="some.container" htmlClass="some-container" as="someContainer"
                    htmlTag="div"
@@ -29,7 +56,6 @@
                    template="Magento_Theme::myview.phtml"/>
         </container>
         <!--My custom container 1-->
-
         <referenceContainer name="footer" label="Page Footer" htmlTag="div" htmlClass="footer content">
             <container name="some.container2" htmlClass="some-container2" as="someContainer2"
                        htmlTag="div"
@@ -43,9 +69,9 @@
                 <arguments>
                     <argument name="css_class" xsi:type="string">footer links</argument>
                 </arguments>
-                <block class="Magento\Framework\View\Element\Html\Link\Current" name="secure-shipping-link">
+                <block class="Magento\Framework\View\Element\Html\Link\Current" name="help-shipping-link">
                     <arguments>
-                        <argument name="label" xsi:type="string" translate="true">Secure shipping</argument>
+                        <argument name="label" xsi:type="string" translate="true">Help</argument>
                         <argument name="path" xsi:type="string">#</argument>
                     </arguments>
                 </block>
@@ -61,26 +87,50 @@
                         <argument name="path" xsi:type="string">#</argument>
                     </arguments>
                 </block>
+                <block class="Magento\Framework\View\Element\Html\Link\Current" name="news-sales-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">News</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link\Current" name="return-sales-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Return Policy</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
             </block>
             <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-3">
                 <arguments>
                     <argument name="css_class" xsi:type="string">footer links</argument>
                 </arguments>
-                <block class="Magento\Framework\View\Element\Html\Link\Current" name="wish-link">
+                <block class="Magento\Framework\View\Element\Html\Link\Current" name="new-link">
                     <arguments>
-                        <argument name="label" xsi:type="string" translate="true">My wishlist</argument>
+                        <argument name="label" xsi:type="string" translate="true">New Products</argument>
                         <argument name="path" xsi:type="string">#</argument>
                     </arguments>
                 </block>
-                <block class="Magento\Framework\View\Element\Html\Link\Current" name="track-link">
+                <block class="Magento\Framework\View\Element\Html\Link\Current" name="top-link">
                     <arguments>
-                        <argument name="label" xsi:type="string" translate="true">Track my order</argument>
+                        <argument name="label" xsi:type="string" translate="true">Top Sellers</argument>
                         <argument name="path" xsi:type="string">#</argument>
                     </arguments>
                 </block>
-                <block class="Magento\Framework\View\Element\Html\Link\Current" name="help-link">
+                <block class="Magento\Framework\View\Element\Html\Link\Current" name="special-link">
                     <arguments>
-                        <argument name="label" xsi:type="string" translate="true">Help</argument>
+                        <argument name="label" xsi:type="string" translate="true">Special Products</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link\Current" name="supply-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Suppliers</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+                <block class="Magento\Framework\View\Element\Html\Link\Current" name="hot-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Hot Offers</argument>
                         <argument name="path" xsi:type="string">#</argument>
                     </arguments>
                 </block>
