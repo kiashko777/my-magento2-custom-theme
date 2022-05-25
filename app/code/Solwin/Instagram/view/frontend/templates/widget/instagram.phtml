@@ -1,0 +1,87 @@
+<?php
+/**
+ * Solwin Infotech
+ * Solwin Instagram Extension
+ *
+ * @category   Solwin
+ * @package    Solwin_Instagram
+ * @copyright  Copyright © 2006-2020 Solwin (https://www.solwininfotech.com)
+ * @license    https://www.solwininfotech.com/magento-extension-license/
+ */
+$helper = $this->helper('\Solwin\Instagram\Helper\Data');
+$enable = $helper->getConfig('instagramsection/instagramgroup/active');
+$userId = $helper->getConfig('instagramsection/instagramgroup/userid');
+$accessToken = $helper->getConfig('instagramsection/instagramgroup/accesstoken');
+$imageNumber = $block->getData('numberimage');
+$imageResolution = $block->getData('resolution');
+
+$objectManager =  \Magento\Framework\App\ObjectManager::getInstance();
+$moduleManager = $objectManager->get('\Magento\Framework\Module\Manager');
+$moduleEnabled = $moduleManager->isEnabled('Solwin_Instagram');
+
+?>
+<?php
+if ($enable && $moduleEnabled) {
+    ?>
+<div class="block-title-main">
+    <h2><?= $block->escapeHtml($block->getData('title')) ?></h2>
+    <div class="title-border"></div>
+</div>
+<div id="cpcolumninstagram" class="cp-fcontent hidden-xs">
+
+    <?php
+    $result = $helper->rudrInstagramApiCurlConnect('https://api.instagram.com/v1/users/' . $userId . '/media/recent?access_token=' . $accessToken . '&count=' . $imageNumber);
+    if ($result->meta->code == 200) {
+        foreach ($result->data as $post) {
+            $caption_text = 'Instagram';
+            if (is_object($post->caption)) {
+                $caption_text = $post->caption->text;
+            }
+            echo '<div class="instangram-feed">
+                    <a href ="'./* @escapeNotVerified */ $post->link.'" target="_blank">
+                        <img src="'./* @escapeNotVerified */ $post->images->$imageResolution->url.'" title="'.$block->escapeHtml($caption_text).'" alt="'.$block->escapeHtml($caption_text).'"/>
+                    </a>
+                </div>';
+        }
+        $arr_pagination = (array)$result->pagination;
+        if (!empty($arr_pagination)) {
+            $maximumNumberOfPost = 33; // it can be 20, depends on your instagram application
+            $no_of_images = $imageNumber; // Enter the number of images you want
+
+            if ($no_of_images > $maximumNumberOfPost) {
+                $next_url = $result->pagination->next_url;
+                $next_max_id = $new_next_max_id = $result->pagination->next_max_id;
+                while ($no_of_images > $maximumNumberOfPost) {
+                     $originalNumbersOfImage = $no_of_images;
+                     $no_of_images = $no_of_images - $maximumNumberOfPost;
+                     $next_url = str_replace("count=" . $originalNumbersOfImage, "count=" . $no_of_images, $next_url);
+                     $next_url = str_replace("max_id=" . $next_max_id, "max_id=" . $new_next_max_id, $next_url);
+                     $next_max_id = $new_next_max_id;
+                     $result_2 = $helper->rudrInstagramApiCurlConnect($next_url);
+
+                    foreach ($result_2->data as $post_2) {
+                        $caption_text = 'Instagram';
+                        if (is_object($post_2->caption)) {
+                            $caption_text = $post_2->caption->text;
+                        }
+                        echo '<div class="instangram-feed">
+                     <a href ="'. /* @escapeNotVerified */ $post_2->link.'" target="_blank">
+                         <img src="'. /* @escapeNotVerified */ $post_2->images->$imageResolution->url.'" title="'.$block->escapeHtml($caption_text).'" alt="'.$block->escapeHtml($caption_text).'"/>
+                     </a>
+                 </div>';
+                    }
+
+
+                    if (count($result_2->data) > 32) {
+                        $new_next_max_id = $result_2->pagination->next_max_id;
+                    }
+                }
+            }
+        }
+    } else { ?>
+        <?= $block->escapeHtml(__('Error:'.$result->meta->error_type." ".$result->meta->error_message)); ?>
+    <?php }
+    ?>
+</div>
+<div class="clear gap-30"></div>
+<?php } ?>

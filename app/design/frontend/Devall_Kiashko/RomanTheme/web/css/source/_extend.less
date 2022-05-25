@@ -13,10 +13,12 @@
 
 .navigation {
     background: white;
+    margin: 0 auto;
 }
 
 .navigation .level0 > .level-top {
     color: black;
+
 }
 
 .top.search {
@@ -43,9 +45,10 @@
     text-decoration: none;
 }
 
-.logo img {
+.logo {
     max-height: inherit;
-    margin-right: 50px;
+    margin-right: 40px;
+    margin-top: 5px;
 }
 
 .page-header .panel.wrapper > a {
@@ -83,6 +86,17 @@
     color: white;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
+    min-height: 40px;
+    padding: 10px;
+    max-width: 100%;
+}
+
+.instagram {
+    background-color: #7bae23;
+    color: white;
+    display: flex;
+    flex-direction: column;
     justify-content: space-around;
     min-height: 40px;
     padding: 10px;
@@ -235,6 +249,24 @@ input[type="text"], input[type="password"], input[type="url"], input[type="tel"]
     margin-bottom: 20px;
     font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
     font-weight: 700;
+}
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+
+    img {
+        margin: 10px;
+    }
+}
+
+.block-search {
+    float: right;
+    padding-left: 5px;
+    position: relative;
+    max-width: 200px;
+    z-index: 4;
 }
 
 

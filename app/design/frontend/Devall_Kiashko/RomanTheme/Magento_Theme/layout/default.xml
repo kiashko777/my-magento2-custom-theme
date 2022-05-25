@@ -11,6 +11,7 @@
         <move element="navigation.sections" destination="header-wrapper"/>
         <move element="some.container" destination="header-wrapper"/>
         <move element="some.container2" destination="footer-container" before="-"/>
+        <move element="cards" destination="footer-container" after="-"/>
         <move element="form.subscribe" destination="some.container2"/>
         <move element="minicart" destination="header.panel" before="-"/>
         <referenceBlock name="header.panel">
@@ -48,6 +49,15 @@
                 </arguments>
             </block>
         </referenceBlock>
+        <referenceBlock name="footer_links-4">
+            <block class="Magento\Framework\View\Element\Text" name="footer_links-4_title" before="-">
+                <arguments>
+                    <argument translate="true" name="text" xsi:type="string">
+                        <![CDATA[<h4>Instagram</h4>]]>
+                    </argument>
+                </arguments>
+            </block>
+        </referenceBlock>
         <!--My custom container 1-->
         <container name="some.container" htmlClass="some-container" as="someContainer"
                    htmlTag="div"
@@ -56,6 +66,14 @@
                    template="Magento_Theme::myview.phtml"/>
         </container>
         <!--My custom container 1-->
+        <!--My custom container 2-->
+        <container name="cards" htmlClass="cards" as="cards"
+                   htmlTag="div"
+                   label="cards">
+            <block class="Magento\Framework\View\Element\Template" name="myview3"
+                   template="Magento_Theme::myview3.phtml"/>
+        </container>
+        <!--My custom container 2-->
         <referenceContainer name="footer" label="Page Footer" htmlTag="div" htmlClass="footer content">
             <container name="some.container2" htmlClass="some-container2" as="someContainer2"
                        htmlTag="div"
@@ -131,6 +149,18 @@
                 <block class="Magento\Framework\View\Element\Html\Link\Current" name="hot-link">
                     <arguments>
                         <argument name="label" xsi:type="string" translate="true">Hot Offers</argument>
+                        <argument name="path" xsi:type="string">#</argument>
+                    </arguments>
+                </block>
+            </block>
+            <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-4">
+                <arguments>
+                    <argument name="css_class" xsi:type="string">footer links</argument>
+                </arguments>
+                <block class="Magento\Framework\View\Element\Html\Link\Current" name="instagram-link">
+                    <arguments>
+                        <argument name="label" xsi:type="string" translate="true">Instagram feed widget goes here...
+                        </argument>
                         <argument name="path" xsi:type="string">#</argument>
                     </arguments>
                 </block>
