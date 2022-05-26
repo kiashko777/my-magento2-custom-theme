@@ -5,6 +5,8 @@
 .page-header {
     background-color: white;
     color: black;
+    border: 0;
+    margin-bottom: 0;
 }
 
 .page-footer {
@@ -13,7 +15,6 @@
 
 .navigation {
     background: white;
-    margin: 0 auto;
 }
 
 .navigation .level0 > .level-top {
@@ -22,7 +23,7 @@
 }
 
 .top.search {
-    display: flex;
+    max-width: 200px;
 }
 
 .page-header .panel.wrapper .switcher strong, .page-footer .switcher strong {
@@ -47,7 +48,6 @@
 
 .logo {
     max-height: inherit;
-    margin-right: 40px;
     margin-top: 5px;
 }
 
@@ -73,11 +73,11 @@
     justify-content: space-around;
     min-height: 50px;
     padding-top: 10px;
+    max-width: 100%;
+    box-sizing: border-box;
 
-    img {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 10px;
+    @media screen and(max-width: 768px) {
+        display: none;
     }
 }
 
@@ -90,6 +90,11 @@
     min-height: 40px;
     padding: 10px;
     max-width: 100%;
+    @media screen and(max-width: 760px) {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .instagram {
@@ -223,6 +228,9 @@ input[type="text"], input[type="password"], input[type="url"], input[type="tel"]
     display: block;
     padding: 10px;
     text-align: left;
+    @media screen and(max-width: 760px) {
+        text-align: center;
+    }
 }
 
 .footer.content .links li a:hover {
@@ -234,6 +242,16 @@ input[type="text"], input[type="password"], input[type="url"], input[type="tel"]
     color: white !important;
     text-decoration: none;
     margin-left: 10px;
+    @media screen and(max-width: 760px) {
+        color: #669c07 !important;
+    }
+}
+
+.footer-contacts {
+    @media screen and(max-width: 760px) {
+        display: block;
+        text-align: center;
+    }
 }
 
 .footer.content .links li {
@@ -242,6 +260,9 @@ input[type="text"], input[type="password"], input[type="url"], input[type="tel"]
     font-size: 14px;
     margin: 0 0 8px;
     padding: 0;
+    @media screen and(max-width: 760px) {
+        color: #669c07 !important;
+    }
 }
 
 .footer.content h4 {
@@ -255,18 +276,49 @@ input[type="text"], input[type="password"], input[type="url"], input[type="tel"]
     display: flex;
     flex-direction: row;
     justify-content: right;
+    @media screen and(max-width: 760px) {
+        justify-content: center;
+        align-items: center;
+    }
 
     img {
         margin: 10px;
     }
 }
 
+.header.content {
+    padding: 0;
+}
+
+.header.content {
+    padding: 30px 20px 0;
+}
+
 .block-search {
-    float: right;
-    padding-left: 5px;
-    position: relative;
-    max-width: 200px;
-    z-index: 4;
+    margin-bottom: 10px;
+}
+
+.navigation ul {
+    text-align: center;
+}
+
+.navigation ul li {
+    padding-bottom: 10px;
+    display: inline;
+    text-align: center;
+}
+
+.navigation, .nav-sections-item-content {
+    background-color: white;
+    font-weight: 600;
+}
+
+.footer.content {
+    @media screen and(max-width: 760px) {
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 

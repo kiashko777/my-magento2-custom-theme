@@ -8,20 +8,11 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <move element="navigation.sections" destination="header-wrapper"/>
-        <move element="some.container" destination="header-wrapper"/>
+        <move element="some.container" destination="content" before="-"/>
         <move element="some.container2" destination="footer-container" before="-"/>
         <move element="cards" destination="footer-container" after="-"/>
         <move element="form.subscribe" destination="some.container2"/>
-        <move element="minicart" destination="header.panel" before="-"/>
-        <referenceBlock name="header.panel">
-            <block class="Magento\Framework\View\Element\Html\Link" name="custom-header-link">
-                <arguments>
-                    <argument name="label" xsi:type="string" translate="true">Choose Language</argument>
-                    <argument name="path" xsi:type="string">*/*/*</argument>
-                </arguments>
-            </block>
-        </referenceBlock>
+        <move element="navigation.sections" destination="header-wrapper" after="logo"/>
         <referenceBlock name="footer_links">
             <block class="Magento\Framework\View\Element\Text" name="footer_links_title" before="-">
                 <arguments>
