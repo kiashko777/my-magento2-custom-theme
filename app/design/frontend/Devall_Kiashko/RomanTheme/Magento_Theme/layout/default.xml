@@ -40,15 +40,6 @@
                 </arguments>
             </block>
         </referenceBlock>
-        <referenceBlock name="footer_links-4">
-            <block class="Magento\Framework\View\Element\Text" name="footer_links-4_title" before="-">
-                <arguments>
-                    <argument translate="true" name="text" xsi:type="string">
-                        <![CDATA[<h4>Instagram</h4>]]>
-                    </argument>
-                </arguments>
-            </block>
-        </referenceBlock>
         <!--My custom container 1-->
         <container name="some.container" htmlClass="some-container" as="someContainer"
                    htmlTag="div"
@@ -140,18 +131,6 @@
                 <block class="Magento\Framework\View\Element\Html\Link\Current" name="hot-link">
                     <arguments>
                         <argument name="label" xsi:type="string" translate="true">Hot Offers</argument>
-                        <argument name="path" xsi:type="string">#</argument>
-                    </arguments>
-                </block>
-            </block>
-            <block class="Magento\Framework\View\Element\Html\Links" name="footer_links-4">
-                <arguments>
-                    <argument name="css_class" xsi:type="string">footer links</argument>
-                </arguments>
-                <block class="Magento\Framework\View\Element\Html\Link\Current" name="instagram-link">
-                    <arguments>
-                        <argument name="label" xsi:type="string" translate="true">Instagram feed widget goes here...
-                        </argument>
                         <argument name="path" xsi:type="string">#</argument>
                     </arguments>
                 </block>

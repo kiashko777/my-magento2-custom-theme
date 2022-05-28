@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a8cc909c21adb2dd1b57f03d7fb0f9a3",
+    "content-hash": "c899eb15c0f74c6d89935a2b5166b65f",
     "packages": [
         {
             "name": "2tvenom/cborencode",
@@ -5166,6 +5166,107 @@
                 }
             ],
             "time": "2022-04-17T13:12:02+00:00"
+        },
+        {
+            "name": "magefan/module-admin-user-guide",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magefan/module-admin-user-guide.git",
+                "reference": "35f950396e7a443cf93e00603e45b2da23c03b58"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magefan/module-admin-user-guide/zipball/35f950396e7a443cf93e00603e45b2da23c03b58",
+                "reference": "35f950396e7a443cf93e00603e45b2da23c03b58",
+                "shasum": ""
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magefan\\AdminUserGuide\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "Admin panel user guides.",
+            "support": {
+                "issues": "https://github.com/magefan/module-admin-user-guide/issues",
+                "source": "https://github.com/magefan/module-admin-user-guide/tree/2.0.1"
+            },
+            "time": "2021-12-30T07:25:20+00:00"
+        },
+        {
+            "name": "magefan/module-community",
+            "version": "2.1.10",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magefan/module-community.git",
+                "reference": "ff7fb0142f5326dcb35276a00a3015f5c2cbc2e6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magefan/module-community/zipball/ff7fb0142f5326dcb35276a00a3015f5c2cbc2e6",
+                "reference": "ff7fb0142f5326dcb35276a00a3015f5c2cbc2e6",
+                "shasum": ""
+            },
+            "require": {
+                "magefan/module-admin-user-guide": ">=2.0.1"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magefan\\Community\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "support": {
+                "issues": "https://github.com/magefan/module-community/issues",
+                "source": "https://github.com/magefan/module-community/tree/2.1.10"
+            },
+            "time": "2022-04-19T07:01:39+00:00"
+        },
+        {
+            "name": "magefan/module-translation",
+            "version": "2.1.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/magefan/module-translation.git",
+                "reference": "f9b4a61e81bf813d448f14990fd85c335efaf5fb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/magefan/module-translation/zipball/f9b4a61e81bf813d448f14990fd85c335efaf5fb",
+                "reference": "f9b4a61e81bf813d448f14990fd85c335efaf5fb",
+                "shasum": ""
+            },
+            "require": {
+                "magefan/module-community": ">=2.1.10"
+            },
+            "suggest": {
+                "magefan/module-translation-plus": "Translate product attributes on all store views in one click - visit magefan.com for more details"
+            },
+            "type": "magento2-module",
+            "autoload": {
+                "files": [
+                    "registration.php"
+                ],
+                "psr-4": {
+                    "Magefan\\Translation\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "description": "This module allowed admin user to change translations in admin panel",
+            "support": {
+                "issues": "https://github.com/magefan/module-translation/issues",
+                "source": "https://github.com/magefan/module-translation/tree/2.1.4"
+            },
+            "time": "2022-04-20T12:11:48+00:00"
         },
         {
             "name": "magento/adobe-ims",
